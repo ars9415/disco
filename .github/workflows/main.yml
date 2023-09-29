@@ -28,4 +28,4 @@ jobs:
           resourceGroupName: demo
           template: source-adf/ARMTemplateForFactory.json
           # Overriding parameters based on the environment
-          parameters: 'factoryName=destinnation-adf'
+          parameters: 'factoryName=destination-adf'
