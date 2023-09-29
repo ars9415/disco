@@ -6,7 +6,6 @@ permissions:
 jobs:
   adf-sg-prd:
     runs-on: ubuntu-latest
-    environment: PRD
     steps:
       # Checkout adf_publish branch
       - uses: actions/checkout@v3
