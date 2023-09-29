@@ -29,3 +29,7 @@ jobs:
           template: source-adf/ARMTemplateForFactory.json
           # Overriding parameters based on the environment
           parameters: 'factoryName=destination-adf'
+
+      - name: Delete resources when deleted
+        run: |
+          armTemplate "$(System.DefaultWorkingDirectory)/source-adf/ARMTemplateForFactory.json" -ResourceGroupName demo -DataFactoryName destination-adf -predeployment $false -deleteDeployment $true
