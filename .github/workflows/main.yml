@@ -31,5 +31,6 @@ jobs:
           parameters: 'factoryName=destination-adf'
 
       - name: Delete resources when deleted
+        shell: pwsh
         run: |
          - armTemplate "source-adf/ARMTemplateForFactory.json" -ResourceGroupName "demo" -DataFactoryName "destination-adf" -predeployment $false -deleteDeployment $true
