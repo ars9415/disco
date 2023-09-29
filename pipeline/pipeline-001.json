@@ -4,7 +4,7 @@
 		"description": "First Demo Pipeline",
 		"activities": [
 			{
-				"name": "Fail1",
+				"name": "Fail",
 				"type": "Fail",
 				"dependsOn": [],
 				"userProperties": [],
