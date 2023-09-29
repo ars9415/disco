@@ -1,0 +1,21 @@
+{
+	"name": "pipeline-001",
+	"properties": {
+		"description": "First Demo Pipeline",
+		"activities": [
+			{
+				"name": "Fail1",
+				"type": "Fail",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"message": "Failed",
+					"errorCode": "404"
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2023-09-29T07:44:17Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
