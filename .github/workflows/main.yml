@@ -35,3 +35,4 @@ jobs:
         with:
           inlineScript: |
             armTemplate "source-adf/ARMTemplateForFactory.json" -ResourceGroupName "demo" -DataFactoryName "destination-adf" -predeployment $false -deleteDeployment $true
+          azPSVersion: "latest"
