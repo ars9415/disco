@@ -32,4 +32,4 @@ jobs:
 
       - name: Delete resources when deleted
         run: |
-          armTemplate "source-adf/ARMTemplateForFactory.json" -ResourceGroupName "demo" -DataFactoryName "destination-adf" -predeployment $false -deleteDeployment $true
+         - armTemplate "source-adf/ARMTemplateForFactory.json" -ResourceGroupName "demo" -DataFactoryName "destination-adf" -predeployment $false -deleteDeployment $true
