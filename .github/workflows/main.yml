@@ -34,4 +34,4 @@ jobs:
         uses: azure/powershell@v1
         with:
           inlineScript: ./PrePostDeploymentScript.Ver2.ps1 -armTemplate "source-adf/ARMTemplateForFactory.json" -ResourceGroupName "demo" -DataFactoryName "destination-adf" -predeployment $false -deleteDeployment $true
-          azPSVersion: "latest"
+          azPSVersion: "latest"  
