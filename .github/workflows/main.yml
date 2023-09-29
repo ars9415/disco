@@ -1,0 +1,32 @@
+name: ADF Deployment
+on: push
+permissions:
+      id-token: write
+      contents: read
+jobs:
+  adf-sg-prd:
+    runs-on: ubuntu-latest
+    environment: PRD
+    steps:
+      # Checkout adf_publish branch
+      - uses: actions/checkout@v3
+        with:
+          ref: adf_publish
+          
+      # Login to Azure Subscription using Managed Identity
+      - name: Login via Az module
+        uses: azure/login@v1
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+          enable-AzPSSession: true
+
+      # Deploy using ARM Templates
+      - name: Run ARM deploy
+        uses: azure/arm-deploy@v1
+        with:
+          resourceGroupName: demo
+          template: source-adf/ARMTemplateForFactory.json
+          # Overriding parameters based on the environment
+          parameters: 'factoryName=destinnation-adf'
