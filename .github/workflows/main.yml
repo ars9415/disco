@@ -30,12 +30,15 @@ jobs:
           # Overriding parameters based on the environment
           parameters: 'factoryName=destination-adf'
 
-      - name: Deploy Hub
+      # - name: Deploy Hub
+      #   uses: azure/powershell@v1
+      #   with:
+      #     inlineScript: ./PrePostDeploymentScript.ps1 -armTemplate "source-adf/ARMTemplateForFactory.json" -ResourceGroupName "demo" -DataFactoryName "destination-adf" -predeployment $false -deleteDeployment $true
+      #     azPSVersion: "latest"  
+      
+      - name: List of triggers from source adf
         uses: azure/powershell@v1
         with:
-          inlineScript: ./PrePostDeploymentScript.ps1 -armTemplate "source-adf/ARMTemplateForFactory.json" -ResourceGroupName "demo" -DataFactoryName "destination-adf" -predeployment $false -deleteDeployment $true
-          azPSVersion: "latest"  
-      
-          
-          
+         inlineScript: source_triggers=$(az datafactory trigger list --factory-name source-adf --resource-group demo --output json)
+         azPSVersion: "latest" 
           
