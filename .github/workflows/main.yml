@@ -23,7 +23,7 @@ jobs:
       - name: Deploy Hub
         uses: azure/powershell@v1
         with:
-          inlineScript: ./PrePostDeploymentScript.ps1 -armTemplate "source-adf/ARMTemplateForFactory.json" -ResourceGroupName "demo" -DataFactoryName "destination-adf" -predeployment $true -deleteDeployment $true
+          inlineScript: ./PrePostDeploymentScript.Ver2.ps1 -armTemplate "source-adf/ARMTemplateForFactory.json" -ResourceGroupName "demo" -DataFactoryName "destination-adf" -predeployment $true -deleteDeployment $true
           azPSVersion: "latest"
 
       # Deploy using ARM Templates
