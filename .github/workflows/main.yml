@@ -25,6 +25,7 @@ jobs:
         uses: azure/powershell@v1
         with:
           inlineScript: ./Pre-Deployment.ps1 -ResourceGroupName "demo" -DataFactoryName "destination-adf"
+          azPSVersion: latest
 
       # Deploy using ARM Templates
       - name: Run ARM deploy
