@@ -39,7 +39,7 @@ jobs:
       - name: Starting triggers
         uses: azure/powershell@v1
         with:
-          inlineScript: ./Pre-Deployment.ps1 -ResourceGroupName "demo" -DataFactoryName "destination-adf"
+          inlineScript: ./Post-Deployment.ps1 -ResourceGroupName "demo" -DataFactoryName "destination-adf"
           azPSVersion: latest
       
       # - name: Deploy Hub
