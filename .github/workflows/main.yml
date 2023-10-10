@@ -35,9 +35,9 @@ jobs:
           # Overriding parameters based on the environment
           parameters: 'factoryName=destination-adf'
 
-      - name: Deploy Hub
-        uses: azure/powershell@v1
-        with:
-          inlineScript: ./PrePostDeploymentScript.ps1 -armTemplate "source-adf/ARMTemplateForFactory.json" -ResourceGroupName "demo" -DataFactoryName "destination-adf" -predeployment $false -deleteDeployment $false
-          azPSVersion: "latest"  
+      # - name: Deploy Hub
+      #   uses: azure/powershell@v1
+      #   with:
+      #     inlineScript: ./PrePostDeploymentScript.ps1 -armTemplate "source-adf/ARMTemplateForFactory.json" -ResourceGroupName "demo" -DataFactoryName "destination-adf" -predeployment $false -deleteDeployment $false
+      #     azPSVersion: "latest"  
           
