@@ -1,0 +1,19 @@
+{
+	"name": "trigger-4",
+	"properties": {
+		"annotations": [
+			"destination-adf"
+		],
+		"runtimeState": "Stopped",
+		"pipelines": [],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Minute",
+				"interval": 15,
+				"startTime": "2023-10-10T09:36:00",
+				"timeZone": "India Standard Time"
+			}
+		}
+	}
+}
