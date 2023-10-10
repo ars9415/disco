@@ -66,8 +66,16 @@
 				"annotations": [
 					"source-adf"
 				],
-				"runtimeState": "Stopped",
-				"pipelines": [],
+				"runtimeState": "Started",
+				"pipelines": [
+					{
+						"pipelineReference": {
+							"referenceName": "pipeline004",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					}
+				],
 				"type": "ScheduleTrigger",
 				"typeProperties": {
 					"recurrence": {
@@ -78,7 +86,9 @@
 					}
 				}
 			},
-			"dependsOn": []
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/pipelines/pipeline004')]"
+			]
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/trigger-4')]",
@@ -88,7 +98,7 @@
 				"annotations": [
 					"destination-adf"
 				],
-				"runtimeState": "Stopped",
+				"runtimeState": "Started",
 				"pipelines": [
 					{
 						"pipelineReference": {
