@@ -40,7 +40,9 @@
 			"type": "Microsoft.DataFactory/factories/triggers",
 			"apiVersion": "2018-06-01",
 			"properties": {
-				"annotations": [],
+				"annotations": [
+					"destination-adf"
+				],
 				"runtimeState": "Stopped",
 				"pipelines": [
 					{
@@ -64,6 +66,28 @@
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/pipelines/pipeline004')]"
 			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/trigger-3')]",
+			"type": "Microsoft.DataFactory/factories/triggers",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [
+					"source-adf"
+				],
+				"runtimeState": "Stopped",
+				"pipelines": [],
+				"type": "ScheduleTrigger",
+				"typeProperties": {
+					"recurrence": {
+						"frequency": "Minute",
+						"interval": 15,
+						"startTime": "2023-10-10T08:31:00",
+						"timeZone": "India Standard Time"
+					}
+				}
+			},
+			"dependsOn": []
 		}
 	]
 }
