@@ -20,6 +20,11 @@ jobs:
           tenant-id: ${{ secrets.AZURE_TENANT_ID }}
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
           enable-AzPSSession: true
+      - name: Deploy Hub
+        uses: azure/powershell@v1
+        with:
+          inlineScript: ./PrePostDeploymentScript.ps1 -armTemplate "source-adf/ARMTemplateForFactory.json" -ResourceGroupName "demo" -DataFactoryName "destination-adf" -predeployment $true -deleteDeployment $true
+          azPSVersion: "latest"
 
       # Deploy using ARM Templates
       - name: Run ARM deploy
@@ -35,10 +40,4 @@ jobs:
         with:
           inlineScript: ./PrePostDeploymentScript.ps1 -armTemplate "source-adf/ARMTemplateForFactory.json" -ResourceGroupName "demo" -DataFactoryName "destination-adf" -predeployment $false -deleteDeployment $false
           azPSVersion: "latest"  
-      
-      - name: Deploy Hub
-        uses: azure/powershell@v1
-        with:
-          inlineScript: ./PrePostDeploymentScript.ps1 -armTemplate "source-adf/ARMTemplateForFactory.json" -ResourceGroupName "demo" -DataFactoryName "destination-adf" -predeployment $true -deleteDeployment $true
-          azPSVersion: "latest"
           
