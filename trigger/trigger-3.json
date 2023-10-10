@@ -4,7 +4,7 @@
 		"annotations": [
 			"source-adf"
 		],
-		"runtimeState": "Stopped",
+		"runtimeState": "Started",
 		"pipelines": [],
 		"type": "ScheduleTrigger",
 		"typeProperties": {
