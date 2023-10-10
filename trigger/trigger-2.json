@@ -1,7 +1,9 @@
 {
 	"name": "trigger-2",
 	"properties": {
-		"annotations": [],
+		"annotations": [
+			"destination-adf"
+		],
 		"runtimeState": "Stopped",
 		"pipelines": [
 			{
