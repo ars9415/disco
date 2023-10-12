@@ -1,4 +1,4 @@
-2wname: ADF Deployment
+name: ADF Deployment
 on: workflow_dispatch
 permissions:
       id-token: write
