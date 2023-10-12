@@ -1,4 +1,4 @@
-name: ADF Deployment
+2wname: ADF Deployment
 on: workflow_dispatch
 permissions:
       id-token: write
@@ -33,7 +33,7 @@ jobs:
       - name: Deploy Hub
         uses: azure/powershell@v1
         with:
-          inlineScript: ./PrePostDeploymentScript.ps1 -armTemplate "source-adf/ARMTemplateForFactory.json" -ResourceGroupName "demo" -DataFactoryName "destination-adf" -predeployment $false -deleteDeployment $true
+          inlineScript: ./PrePostDeploymentScript.Ver2.ps1 -armTemplate "source-adf/ARMTemplateForFactory.json" -ResourceGroupName "demo" -DataFactoryName "destination-adf" -predeployment $false -deleteDeployment $true
           azPSVersion: "latest"  
 
       
