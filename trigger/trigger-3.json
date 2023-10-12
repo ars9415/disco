@@ -1,6 +1,7 @@
 {
 	"name": "trigger-3",
 	"properties": {
+		"description": "added description",
 		"annotations": [
 			"source-adf"
 		],
