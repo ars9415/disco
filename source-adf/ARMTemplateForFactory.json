@@ -99,7 +99,7 @@
 				"annotations": [
 					"destination-adf"
 				],
-				"runtimeState": "Started",
+				"runtimeState": "Stopped",
 				"pipelines": [
 					{
 						"pipelineReference": {
