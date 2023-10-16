@@ -5,7 +5,7 @@
 		"annotations": [
 			"source-adf"
 		],
-		"runtimeState": "Started",
+		"runtimeState": "Stopped",
 		"pipelines": [
 			{
 				"pipelineReference": {
